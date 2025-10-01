@@ -7,7 +7,17 @@
     radial-gradient(1000px 500px at 120% 120%, rgba(167,139,250,0.20), transparent 60%);
 }
 html, body, #root { height: 100%; }
-body { background-color: #0a0a0a; background-image: var(--bg-gradients); }
+body { background-color: #0a0a0a; background-image: var(--bg-gradients); font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+
+/* Grille technique subtile en overlay */
+body::after {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 32px 32px, 32px 32px;
+  mask-image: radial-gradient(80% 60% at 50% 20%, rgba(0,0,0,.8), transparent 75%);
+}
 
 /* Animations et helpers avancés (sans dépendances) */
 @keyframes aurora {
@@ -56,3 +66,15 @@ body { background-color: #0a0a0a; background-image: var(--bg-gradients); }
 
 /* Lueur animée pour boutons clés */
 .animate-glow { animation: glowPulse 3s ease-in-out infinite; }
+
+/* Timeline élégante */
+.timeline { position: relative; margin-left: .25rem; }
+.timeline::before { content: ""; position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: linear-gradient(#22d3ee, #a78bfa); opacity: .25; }
+.timeline-item { position: relative; padding-left: 2rem; }
+.timeline-dot { position: absolute; left: 4px; top: .55rem; width: 12px; height: 12px; border-radius: 9999px; background: linear-gradient(135deg, #22d3ee, #a78bfa); box-shadow: 0 0 0 4px rgba(255,255,255,.05); }
+.timeline-content { background: rgba(255,255,255,.05); backdrop-filter: blur(8px); border-radius: 14px; border: 1px solid rgba(255,255,255,.08); padding: .8rem .9rem; }
+
+/* Accessibilité: réduire les anims si demandé */
+@media (prefers-reduced-motion: reduce) {
+  .aurora, .animate-glow, .text-shimmer { animation: none !important; }
+}

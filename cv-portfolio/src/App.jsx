@@ -153,62 +153,77 @@ export default function App() {
           </Section>
 
           <Section id="xp" titre="Expériences professionnelles">
-            <div className="space-y-6 text-sm text-neutral-200">
-              <div>
-                <p className="font-semibold">10/2024 – 06/2025 · Développeur Web et Web mobile niveau 2 · AFPA | Marseille</p>
-                <ul className="list-disc pl-5 space-y-1">
-                  <li>Développement d'applications web interactives.</li>
-                  <li>Mise en place et gestion de bases de données.</li>
-                  <li>Sécurisation et optimisation des plateformes web.</li>
-                  <li>Collaboration en équipe sur projets complets.</li>
-                  <li>Développement d'interfaces web, front et back.</li>
-                  <li>Codage en HTML, CSS, JavaScript, PHP.</li>
-                  <li>Fonctionnalités back-end avec PHP/MySQL.</li>
-                  <li>Sites web responsives (HTML, CSS, JS).</li>
-                  <li>Analyse des besoins, étude de faisabilité, cahier des charges.</li>
-                  <li>Intégration d’APIs (paiement, réseaux sociaux, etc.).</li>
-                </ul>
+            <div className="timeline space-y-5 text-sm text-neutral-200">
+              <div className="timeline-item">
+                <span className="timeline-dot" />
+                <div className="timeline-content">
+                  <p className="font-semibold">10/2024 – 06/2025 · Développeur Web et Web mobile niveau 2 · AFPA | Marseille</p>
+                  <ul className="list-disc pl-5 space-y-1 mt-1">
+                    <li>Développement d'applications web interactives.</li>
+                    <li>Mise en place et gestion de bases de données.</li>
+                    <li>Sécurisation et optimisation des plateformes web.</li>
+                    <li>Collaboration en équipe sur projets complets.</li>
+                    <li>Développement d'interfaces web, front et back.</li>
+                    <li>Codage en HTML, CSS, JavaScript, PHP.</li>
+                    <li>Fonctionnalités back-end avec PHP/MySQL.</li>
+                    <li>Sites web responsives (HTML, CSS, JS).</li>
+                    <li>Analyse des besoins, étude de faisabilité, cahier des charges.</li>
+                    <li>Intégration d’APIs (paiement, réseaux sociaux, etc.).</li>
+                  </ul>
+                </div>
               </div>
-              <div>
-                <p className="font-semibold">01/2019 – 01/2025 · Militaire · Armée de Terre | Istres</p>
-                <ul className="list-disc pl-5 space-y-1">
-                  <li>Responsable décontamination et réhabilitation de sites sensibles.</li>
-                  <li>Gestion d'équipes et travail collaboratif en milieu exigeant.</li>
-                  <li>Rigueur opérationnelle et atteinte d'objectifs sous contraintes.</li>
-                  <li>Opérations militaires à l'étranger.</li>
-                  <li>Préparation physique et mentale aux exigences du métier.</li>
-                  <li>Adaptation rapide aux imprévus sur le terrain.</li>
-                  <li>Collaboration étroite avec l'équipe pour atteindre les objectifs.</li>
-                </ul>
+              <div className="timeline-item">
+                <span className="timeline-dot" />
+                <div className="timeline-content">
+                  <p className="font-semibold">01/2019 – 01/2025 · Militaire · Armée de Terre | Istres</p>
+                  <ul className="list-disc pl-5 space-y-1 mt-1">
+                    <li>Responsable décontamination et réhabilitation de sites sensibles.</li>
+                    <li>Gestion d'équipes et travail collaboratif en milieu exigeant.</li>
+                    <li>Rigueur opérationnelle et atteinte d'objectifs sous contraintes.</li>
+                    <li>Opérations militaires à l'étranger.</li>
+                    <li>Préparation physique et mentale aux exigences du métier.</li>
+                    <li>Adaptation rapide aux imprévus sur le terrain.</li>
+                    <li>Collaboration étroite avec l'équipe pour atteindre les objectifs.</li>
+                  </ul>
+                </div>
               </div>
-              <div>
-                <p className="font-semibold">01/2013 – 01/2019 · Électricien indépendant · Autoentrepreneur | Samoëns</p>
-                <ul className="list-disc pl-5 space-y-1">
-                  <li>Installation et maintenance électrique & réseaux.</li>
-                  <li>Solutions domotiques et vidéosurveillance.</li>
-                  <li>Relation clients et satisfaction.</li>
-                  <li>Gestion du matériel et de l'outillage sur chantier.</li>
-                  <li>Lecture de schémas/plans/diagrammes.</li>
-                  <li>Dépannage de câblages défectueux (sécurité des installations).</li>
-                  <li>Installations en rénovation et construction (compteurs, prises, éclairage, tableau électrique), vérification finale.</li>
-                </ul>
+              <div className="timeline-item">
+                <span className="timeline-dot" />
+                <div className="timeline-content">
+                  <p className="font-semibold">01/2013 – 01/2019 · Électricien indépendant · Autoentrepreneur | Samoëns</p>
+                  <ul className="list-disc pl-5 space-y-1 mt-1">
+                    <li>Installation et maintenance électrique & réseaux.</li>
+                    <li>Solutions domotiques et vidéosurveillance.</li>
+                    <li>Relation clients et satisfaction.</li>
+                    <li>Gestion du matériel et de l'outillage sur chantier.</li>
+                    <li>Lecture de schémas/plans/diagrammes.</li>
+                    <li>Dépannage de câblages défectueux (sécurité des installations).</li>
+                    <li>Installations en rénovation et construction (compteurs, prises, éclairage, tableau électrique), vérification finale.</li>
+                  </ul>
+                </div>
               </div>
-              <div>
-                <p className="font-semibold">01/2011 – 01/2013 · Électricien · Neo Concet | Samoëns · CDI</p>
-                <ul className="list-disc pl-5 space-y-1">
-                  <li>Tirage de câbles, chemins de câbles, raccordement aux armoires et tableaux.</li>
-                  <li>Pose de prises et interrupteurs, raccordement des fils électriques.</li>
-                  <li>Raccordement des équipements au tableau électrique.</li>
-                </ul>
+              <div className="timeline-item">
+                <span className="timeline-dot" />
+                <div className="timeline-content">
+                  <p className="font-semibold">01/2011 – 01/2013 · Électricien · Neo Concet | Samoëns · CDI</p>
+                  <ul className="list-disc pl-5 space-y-1 mt-1">
+                    <li>Tirage de câbles, chemins de câbles, raccordement aux armoires et tableaux.</li>
+                    <li>Pose de prises et interrupteurs, raccordement des fils électriques.</li>
+                    <li>Raccordement des équipements au tableau électrique.</li>
+                  </ul>
+                </div>
               </div>
-              <div>
-                <p className="font-semibold">01/2008 – 01/2011 · Agent maintenance · EDF-GDF</p>
-                <ul className="list-disc pl-5 space-y-1">
-                  <li>Mise en place du matériel pour les tâches d'entretien et de réparation.</li>
-                  <li>Dépannages simples: identification des pannes, remplacement des éléments.</li>
-                  <li>Diagnostic et dépannage d’équipements industriels/électromécaniques.</li>
-                  <li>Entretien préventif et correctif des installations.</li>
-                </ul>
+              <div className="timeline-item">
+                <span className="timeline-dot" />
+                <div className="timeline-content">
+                  <p className="font-semibold">01/2008 – 01/2011 · Agent maintenance · EDF-GDF</p>
+                  <ul className="list-disc pl-5 space-y-1 mt-1">
+                    <li>Mise en place du matériel pour les tâches d'entretien et de réparation.</li>
+                    <li>Dépannages simples: identification des pannes, remplacement des éléments.</li>
+                    <li>Diagnostic et dépannage d’équipements industriels/électromécaniques.</li>
+                    <li>Entretien préventif et correctif des installations.</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </Section>
