@@ -202,18 +202,33 @@ export default function App() {
         {/* Colonne gauche */}
         <div className="md:col-span-1 space-y-6">
           <Section id="formation" titre="Formation">
-            <ul className="list-disc pl-5 space-y-2 text-neutral-200 text-sm">
+            <ul className="space-y-3 text-neutral-200 text-sm">
               <li>
-                <span className="font-medium ">01/2024 – 01/2025</span> — AFPA |
-                Marseille — DWWM : Développement web et web mobile
+                <div className="flex items-start gap-3">
+                  <span className="badge badge-date">01/2024 – 01/2025</span>
+                  <div>
+                    <p className="font-semibold">AFPA · Marseille — DWWM</p>
+                    <p className="meta">Développement web et web mobile</p>
+                  </div>
+                </div>
               </li>
               <li>
-                <span className="font-medium">01/2025 – 01/2026</span> —
-                Développeur en intelligence artificielle — Projet en cours
+                <div className="flex items-start gap-3">
+                  <span className="badge badge-date">01/2025 – 01/2026</span>
+                  <div>
+                    <p className="font-semibold">Développeur en intelligence artificielle</p>
+                    <p className="meta">Projet en cours</p>
+                  </div>
+                </div>
               </li>
               <li>
-                <span className="font-medium">01/2008</span> — Cluses — Bac
-                STI2D : Génie électronique, conception circuits imprimés
+                <div className="flex items-start gap-3">
+                  <span className="badge badge-date">01/2008</span>
+                  <div>
+                    <p className="font-semibold">Bac STI2D — Cluses</p>
+                    <p className="meta">Génie électronique, conception circuits imprimés</p>
+                  </div>
+                </div>
               </li>
             </ul>
           </Section>
@@ -277,11 +292,12 @@ export default function App() {
               <div className="timeline-item">
                 <span className="timeline-dot" />
                 <div className="timeline-content">
-                  <p className="font-semibold">
-                    10/2024 – 06/2025 · Développeur Web et Web mobile niveau 2 ·
-                    AFPA | Marseille
-                  </p>
-                  <ul className="list-disc pl-5 space-y-1 mt-1">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="badge badge-date">10/2024 – 06/2025</span>
+                    <h3 className="font-semibold text-neutral-100">Développeur Web et Web mobile niveau 2</h3>
+                  </div>
+                  <p className="meta">AFPA · Marseille</p>
+                  <ul className="list-tight">
                     <li>Développement d'applications web interactives.</li>
                     <li>Mise en place et gestion de bases de données.</li>
                     <li>Sécurisation et optimisation des plateformes web.</li>
@@ -303,10 +319,12 @@ export default function App() {
               <div className="timeline-item">
                 <span className="timeline-dot" />
                 <div className="timeline-content">
-                  <p className="font-semibold">
-                    01/2019 – 01/2025 · Militaire · Armée de Terre | Istres
-                  </p>
-                  <ul className="list-disc pl-5 space-y-1 mt-1">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="badge badge-date">01/2019 – 01/2025</span>
+                    <h3 className="font-semibold text-neutral-100">Militaire</h3>
+                  </div>
+                  <p className="meta">Armée de Terre · Istres</p>
+                  <ul className="list-tight">
                     <li>
                       Responsable décontamination et réhabilitation de sites
                       sensibles.
@@ -334,11 +352,12 @@ export default function App() {
               <div className="timeline-item">
                 <span className="timeline-dot" />
                 <div className="timeline-content">
-                  <p className="font-semibold">
-                    01/2013 – 01/2019 · Électricien indépendant ·
-                    Autoentrepreneur | Samoëns
-                  </p>
-                  <ul className="list-disc pl-5 space-y-1 mt-1">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="badge badge-date">01/2013 – 01/2019</span>
+                    <h3 className="font-semibold text-neutral-100">Électricien indépendant</h3>
+                  </div>
+                  <p className="meta">Autoentrepreneur · Samoëns</p>
+                  <ul className="list-tight">
                     <li>Installation et maintenance électrique & réseaux.</li>
                     <li>Solutions domotiques et vidéosurveillance.</li>
                     <li>Relation clients et satisfaction.</li>
@@ -359,10 +378,12 @@ export default function App() {
               <div className="timeline-item">
                 <span className="timeline-dot" />
                 <div className="timeline-content">
-                  <p className="font-semibold">
-                    01/2011 – 01/2013 · Électricien · Neo Concet | Samoëns · CDI
-                  </p>
-                  <ul className="list-disc pl-5 space-y-1 mt-1">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="badge badge-date">01/2011 – 01/2013</span>
+                    <h3 className="font-semibold text-neutral-100">Électricien</h3>
+                  </div>
+                  <p className="meta">Neo Concet · Samoëns · CDI</p>
+                  <ul className="list-tight">
                     <li>
                       Tirage de câbles, chemins de câbles, raccordement aux
                       armoires et tableaux.
@@ -378,10 +399,12 @@ export default function App() {
               <div className="timeline-item">
                 <span className="timeline-dot" />
                 <div className="timeline-content">
-                  <p className="font-semibold">
-                    01/2008 – 01/2011 · Agent maintenance · EDF-GDF
-                  </p>
-                  <ul className="list-disc pl-5 space-y-1 mt-1">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="badge badge-date">01/2008 – 01/2011</span>
+                    <h3 className="font-semibold text-neutral-100">Agent maintenance</h3>
+                  </div>
+                  <p className="meta">EDF-GDF</p>
+                  <ul className="list-tight">
                     <li>
                       Mise en place du matériel pour les tâches d'entretien et
                       de réparation.

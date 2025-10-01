@@ -74,6 +74,13 @@ body::after {
 .timeline-dot { position: absolute; left: 4px; top: .55rem; width: 12px; height: 12px; border-radius: 9999px; background: linear-gradient(135deg, #22d3ee, #a78bfa); box-shadow: 0 0 0 4px rgba(255,255,255,.05); }
 .timeline-content { background: rgba(255,255,255,.05); backdrop-filter: blur(8px); border-radius: 14px; border: 1px solid rgba(255,255,255,.08); padding: .8rem .9rem; }
 
+/* Badges et meta pour hiérarchie lisible */
+.badge { display: inline-flex; align-items: center; gap: .35rem; padding: .15rem .5rem; border-radius: 9999px; font-size: .75rem; line-height: 1rem; font-weight: 600; color: #e5e7eb; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.10); }
+.badge-date { background: linear-gradient(90deg, rgba(34,211,238,.18), rgba(167,139,250,.18)); border-color: rgba(167,139,250,.35); color: #cffafe; }
+.meta { color: #a3a3a3; font-size: .85rem; font-weight: 500; }
+.list-tight { list-style: disc; padding-left: 1.25rem; margin-top: .25rem; }
+.list-tight li { margin: .25rem 0; line-height: 1.45; }
+
 /* Accessibilité: réduire les anims si demandé */
 @media (prefers-reduced-motion: reduce) {
   .aurora, .animate-glow, .text-shimmer { animation: none !important; }
