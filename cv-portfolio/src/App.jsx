@@ -25,7 +25,7 @@ function Section({ id, titre, children }) {
   return (
     <section id={id} ref={ref} className="opacity-0 translate-y-6 transition-all duration-700">
       <h2 className="text-xl md:text-2xl font-semibold tracking-wide text-fuchsia-300 mb-3">{titre}</h2>
-      <div className="bg-white/5 backdrop-blur-md rounded-2xl ring-1 ring-white/10 p-5 md:p-6">
+      <div className="relative gradient-border bg-white/5 backdrop-blur-md rounded-2xl ring-1 ring-white/10 p-5 md:p-6">
         {children}
       </div>
     </section>
@@ -39,19 +39,46 @@ export default function App() {
   const vcfUrl = useMemo(() => `${window.location.origin}/quentin-faber.vcf`, []);
   const qrUrl = useMemo(() => `https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=${encodeURIComponent(vcfUrl)}`,[vcfUrl]);
   const [qrOpen, setQrOpen] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const heroRef = useRef(null);
+
+  // Barre de progression du scroll
+  useEffect(() => {
+    const onScroll = () => {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      const p = h > 0 ? (window.scrollY / h) * 100 : 0;
+      setProgress(Math.max(0, Math.min(100, p)));
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  // Parallax léger au survol du hero
+  const handleMouseMove = (e) => {
+    const rect = heroRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    const px = (e.clientX - rect.left) / rect.width - 0.5;
+    const py = (e.clientY - rect.top) / rect.height - 0.5;
+    heroRef.current.style.setProperty('--px', px.toFixed(3));
+    heroRef.current.style.setProperty('--py', py.toFixed(3));
+  };
   return (
     <main className="min-h-screen">
+      {/* Barre de progression */}
+      <div className="scroll-progress" style={{ width: `${progress}%` }} />
       {/* Hero */}
-      <header className="relative overflow-hidden">
-        <div className="absolute -top-40 -left-40 w-[40rem] h-[40rem] bg-cyan-400/20 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -right-40 w-[40rem] h-[40rem] bg-fuchsia-400/20 rounded-full blur-3xl"></div>
+      <header ref={heroRef} onMouseMove={handleMouseMove} className="relative overflow-hidden parallax">
+        <div className="parallax-layer absolute -top-40 -left-40 w-[40rem] h-[40rem] bg-cyan-400/20 rounded-full blur-3xl"></div>
+        <div className="parallax-layer absolute -bottom-40 -right-40 w-[40rem] h-[40rem] bg-fuchsia-400/20 rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 aurora opacity-70"></div>
 
         <div className="max-w-5xl mx-auto px-4 pt-16 pb-12">
-          <div className="bg-white/5 backdrop-blur-md rounded-3xl ring-1 ring-white/10 p-6 md:p-10">
+          <div className="relative gradient-border bg-white/5 backdrop-blur-md rounded-3xl ring-1 ring-white/10 p-6 md:p-10">
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
               <div>
                 <h1 className="text-3xl md:text-5xl font-bold tracking-tight">
-                  Quentin <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-fuchsia-300">Faber</span>
+                  Quentin <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-fuchsia-300 text-shimmer">Faber</span>
                 </h1>
                 <p className="mt-2 text-neutral-300">Alternance DATA/IA</p>
                 <div className="mt-3 text-sm text-neutral-300 space-y-1">
@@ -62,7 +89,7 @@ export default function App() {
                 </div>
               </div>
               <div className="flex flex-wrap gap-3">
-                <a href="/cv.pdf" className="px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-fuchsia-500 text-black font-semibold hover:opacity-90">Télécharger le CV</a>
+                <a href="/cv.pdf" className="px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-fuchsia-500 text-black font-semibold hover:opacity-90 animate-glow">Télécharger le CV</a>
                 <a href="/quentin-faber.vcf" download className="px-4 py-2 rounded-full bg-white/10 ring-1 ring-white/20 hover:bg-white/15">Ajouter le contact (.vcf)</a>
                 <a href="mailto:faber.quentin@gmail.com" className="px-4 py-2 rounded-full bg-white/10 ring-1 ring-white/20 hover:bg-white/15">Me contacter</a>
                 <a href="https://github.com/Eloura74?tab=repositories" target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-full bg-white/10 ring-1 ring-white/20 hover:bg-white/15 flex items-center gap-2">
@@ -104,7 +131,7 @@ export default function App() {
           <Section id="competences" titre="Compétences clés">
             <div className="flex flex-wrap gap-2">
               {["Python","HTML5","CSS3","JavaScript ES6+","Tailwind","SQL","Initiation à l'IA","Manipulation de données","Automatisation","Bases de données relationnelles","Git","Docker","Linux/WSL","VSCode","Fusion360","Méthodique","Analytique","Autonomie","Travail en équipe"].map((c) => (
-                <span key={c} className="text-sm px-3 py-1 rounded-full bg-white/5 ring-1 ring-white/10">{c}</span>
+                <span key={c} className="text-sm px-3 py-1 rounded-full bg-white/5 ring-1 ring-white/10 transition-transform duration-200 hover:scale-105">{c}</span>
               ))}
             </div>
           </Section>
