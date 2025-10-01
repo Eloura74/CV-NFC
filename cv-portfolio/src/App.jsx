@@ -204,23 +204,16 @@ export default function App() {
           <Section id="formation" titre="Formation">
             <ul className="list-disc pl-5 space-y-2 text-neutral-200 text-sm">
               <li>
-                <span className="font-medium text-2xl bold">
-                  01/2024 – 01/2025
-                </span>
-                <br /> — AFPA | Marseille — DWWM : Développement web et web
-                mobile
+                <span className="font-medium ">01/2024 – 01/2025</span> — AFPA |
+                Marseille — DWWM : Développement web et web mobile
               </li>
               <li>
-                <span className="font-medium text-2xl bold">
-                  01/2025 – 01/2026
-                </span>
-                <br /> — Développeur en intelligence artificielle — Projet en
-                cours
+                <span className="font-medium">01/2025 – 01/2026</span> —
+                Développeur en intelligence artificielle — Projet en cours
               </li>
               <li>
-                <span className="font-medium text-2xl bold">01/2008</span>
-                <br /> — Cluses — Bac STI2D : Génie électronique, conception
-                circuits imprimés
+                <span className="font-medium">01/2008</span> — Cluses — Bac
+                STI2D : Génie électronique, conception circuits imprimés
               </li>
             </ul>
           </Section>
