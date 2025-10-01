@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Faber;Quentin;;;
+FN:Quentin Faber
+TITLE:Alternance DATA/IA
+TEL;TYPE=CELL,VOICE:+33768833098
+EMAIL;TYPE=INTERNET:faber.quentin@gmail.com
+ADR;TYPE=HOME:;;25 ronde des bolles;Istres;;13800;France
+URL:https://exemple-url.vercel.app
+END:VCARD
